@@ -44,53 +44,60 @@ EXAMPLE_IDS_TO_LABELS = {
     8: "SALSCO",
     9: "TSME",
 }
+
+SEGMENTATION_EXAMPLE_FOLDER = Path(DATA_FOLDER, "valley_tree_species")
+
 # The mesh exported from Metashape
-EXAMPLE_MESH_FILENAME = Path(
-    DATA_FOLDER, "example_Emerald_Point_data", "inputs", "mesh.ply"
+SEGMENTATION_EXAMPLE_LABELS_FILENAME = Path(
+    SEGMENTATION_EXAMPLE_FOLDER, "inputs", "valley_ground_truth_labels.gpkg"
+)
+SEGMENTATION_EXAMPLE_LABEL_COLUMN_NAME = "species_observed"
+# The mesh exported from Metashape
+SEGMENTATION_EXAMPLE_MESH_FILENAME = Path(
+    SEGMENTATION_EXAMPLE_FOLDER, "inputs", "valley_mesh.ply"
 )
 # The camera file exported from Metashape
-EXAMPLE_CAMERAS_FILENAME = Path(
-    DATA_FOLDER, "example_Emerald_Point_data", "inputs", "cameras.xml"
+SEGMENTATION_EXAMPLE_CAMERAS_FILENAME = Path(
+    SEGMENTATION_EXAMPLE_FOLDER, "inputs", "valley_cameras.xml"
 )
 # The digital elevation map exported by Metashape
-EXAMPLE_DTM_FILE = Path(DATA_FOLDER, "example_Emerald_Point_data", "inputs", "dtm.tif")
+SEGMENTATION_EXAMPLE_DTM_FILE = Path(
+    SEGMENTATION_EXAMPLE_FOLDER, "inputs", "valley_DTM.tif"
+)
 # The image folder used to create the Metashape project
-EXAMPLE_IMAGE_FOLDER = Path(
-    DATA_FOLDER, "example_Emerald_Point_data", "inputs", "images"
+SEGMENTATION_EXAMPLE_IMAGE_FOLDER = Path(
+    SEGMENTATION_EXAMPLE_FOLDER, "inputs", "images"
 )
 
-## Define the intermediate results
-# Processed geo file
-EXAMPLE_STANDARDIZED_LABELS_FILENAME = Path(
-    DATA_FOLDER,
-    "example_Emerald_Point_data",
-    "intermediate_results",
-    "standardized_labels.geojson",
-)
 # Where to save the mesh after labeling
-EXAMPLE_LABELED_MESH_FILENAME = Path(
-    DATA_FOLDER,
-    "example_Emerald_Point_data",
+SEGMENTATION_EXAMPLE_LABELED_MESH_FILENAME = Path(
+    SEGMENTATION_EXAMPLE_FOLDER,
     "intermediate_results",
     "labeled_mesh.ply",
 )
 # Where to save the rendering label images
-EXAMPLE_RENDERED_LABELS_FOLDER = Path(
-    DATA_FOLDER, "example_Emerald_Point_data", "intermediate_results", "rendered_labels"
+SEGMENTATION_EXAMPLE_RENDERED_LABELS_FOLDER = Path(
+    SEGMENTATION_EXAMPLE_FOLDER,
+    "intermediate_results",
+    "rendered_labels",
 )
 # Predicted images from a segementation algorithm
-EXAMPLE_PREDICTED_LABELS_FOLDER = Path(
-    DATA_FOLDER,
-    "example_Emerald_Point_data",
+SEGMENTATION_EXAMPLE_PREDICTED_LABELS_FOLDER = Path(
+    SEGMENTATION_EXAMPLE_FOLDER,
     "intermediate_results",
-    "predicted_segmentations",
+    "predicted_labels",
 )
 # The predicted aggregated face data
-EXAMPLE_AGGREGATED_FACE_LABELS_FILE = Path(
-    DATA_FOLDER,
-    "example_Emerald_Point_data",
+SEGMENTATION_EXAMPLE_AGGREGATED_FACE_LABELS_FILE = Path(
+    SEGMENTATION_EXAMPLE_FOLDER,
     "intermediate_results",
     "aggregated_face_labels.npy",
+)
+## Outputs
+SEGMENTATION_EXAMPLE_PREDICTED_VECTOR_LABELS_FILE = Path(
+    SEGMENTATION_EXAMPLE_FOLDER,
+    "outputs",
+    "predicted_labels.geojson",
 )
 
 EXAMPLE_INTRINSICS = {
@@ -117,13 +124,6 @@ MATPLOTLIB_PALLETE = [
 TEN_CLASS_VIS_KWARGS = {"cmap": "tab10", "clim": (-0.5, 9.5)}
 TWENTY_CLASS_VIS_KWARGS = {"cmap": "tab20", "clim": (-0.5, 19.5)}
 
-## Outputs
-EXAMPLE_PREDICTED_VECTOR_LABELS_FILE = Path(
-    DATA_FOLDER,
-    "example_Emerald_Point_data",
-    "outputs",
-    "predicted_labels.geojson",
-)
 
 EXAMPLE_LABEL_NAMES = (
     "ABCO",

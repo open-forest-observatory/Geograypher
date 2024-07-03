@@ -66,7 +66,7 @@ SEGMENTATION_EXAMPLE_DTM_FILE = Path(
 )
 # The image folder used to create the Metashape project
 SEGMENTATION_EXAMPLE_IMAGE_FOLDER = Path(
-    SEGMENTATION_EXAMPLE_FOLDER, "inputs", "images"
+    SEGMENTATION_EXAMPLE_FOLDER, "inputs", "valley_images"
 )
 
 # Where to save the mesh after labeling
